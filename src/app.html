@@ -1,3 +1,20 @@
 <template>
-  <h1>${message}</h1>
+  <h1>Observable result: ${message}</h1>
+
+  <h1>Notification from BrowserSync</h1>
+  
+  <div>Simple message:
+    <input type="text" value.bind="simpleData" placeholder="Send your text" />
+    <button click.delegate="sendSimple()">Send</button>
+  </div>
+
+  <div>Complex message:
+    <input type="text" value.bind="complexData.firstName" placeholder="First name" />
+    <input type="text" value.bind="complexData.lastName" placeholder="Last name" />
+    <button click.delegate="sendComplex()">Send</button>
+  </div>
+
+  <br /> <br />
+  WebSocket response: ${socketResponse}
+
 </template>
