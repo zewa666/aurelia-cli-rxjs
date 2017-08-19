@@ -45,6 +45,10 @@
     "valueConverters": "resources/value-converters",
     "bindingBehaviors": "resources/binding-behaviors"
   },
+  "bundler": {
+    "id": "cli",
+    "displayName": "Aurelia-CLI"
+  },
   "build": {
     "targets": [
       {
