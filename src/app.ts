@@ -12,6 +12,7 @@ interface SPAFramework {
 export class App {
   public frameworks: Observable<SPAFramework[]>;
   public frameworkOverTime: Observable<SPAFramework>;
+  public isSequenceDone: boolean = false;
 
   constructor() {
     const data: SPAFramework[] = [
@@ -25,5 +26,9 @@ export class App {
     this.frameworkOverTime = Observable.interval(2000)
       .map((idx) => data[idx])
       .take(data.length);
+  }
+
+  public completedHandler = () => {
+    setTimeout(() => this.isSequenceDone = true, 2000);
   }
 }

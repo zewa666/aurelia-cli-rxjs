@@ -7,6 +7,14 @@
     </li>
   </ul>
 
-  <h1>Frameworks streamed</h1>
-  <div with.bind="frameworkOverTime & async"><a href="${url}">${label}</a></div>
+  <h1>Frameworks streamed (plucked property)</h1>
+  <div>
+      ${frameworkOverTime & async: { property: 'label' }}
+  </div>
+
+  <h1>Frameworks streamed (with binding, completed handler)</h1>
+  <div with.bind="frameworkOverTime & async: { completed: completedHandler }">
+    <a if.bind="!isSequenceDone" href="${url}">${label}</a>
+    <span if.bind="isSequenceDone">Sequence is done!</span>
+  </div>
 </template>
