@@ -5,7 +5,8 @@ export function configure(aurelia: Aurelia) {
   aurelia.use
     .defaultBindingLanguage()
     .defaultResources()
-    .feature('resources');
+    .feature('resources')
+    .plugin('aurelia-async-binding');
 
   if (environment.debug) {
     aurelia.use.developmentLogging();

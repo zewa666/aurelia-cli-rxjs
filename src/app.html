@@ -1,5 +1,4 @@
 <template>
-  <require from="./async-binding"></require>
   <h1>SPA Frameworks</h1>
   <ul>
     <li repeat.for="framework of frameworks & async">
@@ -17,4 +16,15 @@
     <a if.bind="!isSequenceDone" href="${url}">${label}</a>
     <span if.bind="isSequenceDone">Sequence is done!</span>
   </div>
+
+  <h1>Promises</h1>
+  Succeeding ${succeedingPromise & async: { property: 'blub' }}<br />
+  Failing ${failingPromise & async: { catch: 'Doh' }}<br />
+  <span>Fasdfd</span>
+  
+  <span>Fail handler ${failingPromise & async: { catch: promiseFailHandler }}</span>
+
+  <h1>Observable fail</h1>
+  Failing ${failingObservable & async: { error: "Ohh noees"} }
+  FailHandler ${failingObservable & async: { error: observableFailHandler} }
 </template>

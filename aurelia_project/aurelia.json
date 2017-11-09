@@ -124,6 +124,11 @@
             "name": "rxjs",
             "path": "../node_modules/rxjs",
             "main": false
+          },
+          {
+            "name": "aurelia-async-binding",
+            "path": "../node_modules/aurelia-async-binding/dist/amd",
+            "main": "aurelia-async-binding"
           }
         ]
       }
